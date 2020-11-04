@@ -1,0 +1,26 @@
+<form [hidden]="authenticated()" role="form" (submit)="login()">
+	<div class="row align-items-center">
+		<div class="col-4">
+			<input type="text" class="form-control form-control-sm" id="username" name="username" placeholder="name" [(ngModel)]="credentials.name"/>
+		</div>
+		<div class="col-4">
+			<input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="password" [(ngModel)]="credentials.password"/>
+		</div>
+	
+		<div class="col-4">
+			<button type="submit" class="btn btn-secondary btn-sm">Login</button>
+		</div>
+	</div>
+</form>
+
+<form [hidden]="!authenticated()" role="form" (submit)="logout()">
+	<div class="row align-items-center">
+		<div class="col-8">
+			<p>Logged in as </p>
+		</div>
+	
+		<div class="col-4">
+			<button type="submit" class="btn btn-secondary btn-sm">Logout</button>
+		</div>
+	</div>
+</form>

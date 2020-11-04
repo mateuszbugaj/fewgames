@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(236, 190, 105); 
+    height: 100px; 
+    width: 100%;
+}
+
+#logo{
+    font-size: 50px;
+    color: rgb(78, 88, 105);
+    text-decoration: none;
+    font-weight: bold;
+}
