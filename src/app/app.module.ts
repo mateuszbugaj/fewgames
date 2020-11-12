@@ -9,28 +9,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
-
-// const routes: Routes = [
-//   {path: 'home', component: HomeComponent},
-//   {path: '', redirectTo: 'home', pathMatch: 'full'}
-// ];
 
 const routes: Routes = [
   {path: '', component: HomeComponent}
 ];
-
-@Injectable()
-export class XhrInterceptor implements HttpInterceptor {
-
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const xhr = req.clone({
-      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
-    });
-    return next.handle(xhr);
-  }
-}
 
 
 @NgModule({
