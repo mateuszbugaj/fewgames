@@ -17,10 +17,13 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   private final PasswordEncoder passwordEncoder;
+  private final CustomAuthenticationEntryPoint authenticationEntryPoint;
+
 
   @Autowired
-  public SecurityConfig(PasswordEncoder passwordEncoder) {
+  public SecurityConfig(PasswordEncoder passwordEncoder, CustomAuthenticationEntryPoint authenticationEntryPoint) {
     this.passwordEncoder = passwordEncoder;
+    this.authenticationEntryPoint = authenticationEntryPoint;
   }
 
   @Override
@@ -49,6 +52,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .anyRequest()
           .authenticated()
           .and()
-          .httpBasic();
+          .httpBasic().authenticationEntryPoint(authenticationEntryPoint);
   }
 }
