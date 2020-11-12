@@ -1,0 +1,19 @@
+<div class="card" style="width: 140px; margin: 7px;">
+    <div class="card-header">
+        <!-- https://angular.io/api/common/NgIf -->
+        <div *ngIf="entry.user; then userDefined else userUndefined"></div>
+
+        <ng-template #userDefined>
+            <h5>{{entry.user.name}}</h5>
+        </ng-template>
+
+        <ng-template #userUndefined>
+            <h5>Anon</h5>
+        </ng-template>
+        
+    </div>
+    <div class="card-body text-primary">
+      <p id="Date" class="card-text" style="font-size: 12px;">{{formatDate(entry.date)}}</p>
+      <p id="Score" class="card-text" style="font-size: 20px; font-weight: bold;">{{entry.score}}</p>
+    </div>
+  </div>

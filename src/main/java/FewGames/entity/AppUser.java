@@ -1,4 +1,4 @@
-package FewGames.auth;
+package FewGames.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

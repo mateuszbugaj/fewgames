@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { GameEntryComponent } from './game-entry/game-entry.component';
+import { GameComponent } from './game/game.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent}
@@ -22,7 +24,9 @@ const routes: Routes = [
     AppComponent,
     TopBannerComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    GameComponent,
+    GameEntryComponent
   ],
   imports: [
     BrowserModule,

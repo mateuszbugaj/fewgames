@@ -1,5 +1,6 @@
-package FewGames.security;
+package FewGames.auth;
 
+import FewGames.auth.AppUserPermission;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Arrays;

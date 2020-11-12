@@ -1,4 +1,4 @@
-package FewGames.security;
+package FewGames.auth;
 
 public enum AppUserPermission {
 

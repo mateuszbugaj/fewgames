@@ -1,4 +1,6 @@
-package FewGames.auth;
+package FewGames.dao;
+
+import FewGames.entity.AppUser;
 
 import java.util.Optional;
 

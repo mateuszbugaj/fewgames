@@ -1,6 +1,7 @@
-package FewGames.auth;
+package FewGames.dao;
 
-import FewGames.security.AppUserRole;
+import FewGames.entity.AppUser;
+import FewGames.auth.AppUserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("fake")
-public class FakeUserDaoService implements UserDao{
+public class FakeUserDaoService implements UserDao {
 
   private final PasswordEncoder passwordEncoder;
 
@@ -38,7 +39,6 @@ public class FakeUserDaoService implements UserDao{
         true
       )
     ));
-
 
     return users;
   }

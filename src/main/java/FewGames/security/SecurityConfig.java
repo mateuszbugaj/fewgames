@@ -1,6 +1,8 @@
 package FewGames.security;
 
-import FewGames.auth.AuthService;
+import FewGames.auth.AppUserRole;
+import FewGames.auth.CustomAuthenticationEntryPoint;
+import FewGames.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

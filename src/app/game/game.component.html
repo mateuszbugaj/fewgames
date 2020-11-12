@@ -1,0 +1,13 @@
+  <div class="container">
+    <h1 id="title">{{gameCode.name}}</h1>
+    <hr>
+    <div class="sketch" id="sketch-holder:{{sketchHolderId}}"></div>
+    <div class="scrollmenu">
+
+      <div class="d-flex">
+        <game-entry *ngFor="let e of entries" [entry] = e></game-entry>
+      </div>
+      
+    </div>
+
+</div>

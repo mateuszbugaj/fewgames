@@ -1,0 +1,33 @@
+.sketch{
+    display: flex; 
+    justify-content: center; 
+    -items: center;
+}
+
+
+#title{
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+div.scrollmenu a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
+  .scrollmenu::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollmenu::-webkit-scrollbar-thumb{
+    background: rgb(78, 88, 105);
+    border-radius: 10px;
+  }

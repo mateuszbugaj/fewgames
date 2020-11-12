@@ -1,0 +1,22 @@
+p{
+    margin: 0px;
+    color: black;
+}
+
+h5{
+    margin: 0px;
+}
+
+.card{
+    border: none;
+}
+
+.card-header{
+    padding: 5px;
+    background-color: rgb(236, 190, 105);
+}
+
+.card-body{
+    padding: 5px;
+    background-color: rgb(226, 227, 229);
+}
