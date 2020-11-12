@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { IUser } from '../models/user';
 
@@ -11,18 +12,25 @@ export class LoginComponent {
 
   credentials: IUser = { name: "", password: "" };
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   login(){
     this.authService.login(this.credentials);
   }
+
+  // login() {
+  //   this.authService.authenticate(this.credentials, () => {
+  //       this.router.navigateByUrl('/');
+  //   });
+  //   return false;
+  // }
 
   logout(){
 
   }
 
   authenticated() {
-    return false;
+    return this.authService.authenticated;
   }
 
 }

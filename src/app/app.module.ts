@@ -12,9 +12,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
 
+// const routes: Routes = [
+//   {path: 'home', component: HomeComponent},
+//   {path: '', redirectTo: 'home', pathMatch: 'full'}
+// ];
+
 const routes: Routes = [
-  { path: "", component: HomeComponent}
+  {path: '', component: HomeComponent}
 ];
+
 
 @NgModule({
   declarations: [
