@@ -10,23 +10,12 @@ import { IUser } from '../models/user';
 })
 export class LoginComponent {
 
-  credentials: IUser = { name: "", password: "" };
+  credentials: IUser = { username: "", password: "" };
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService) { }
 
   login(){
-    this.authService.login(this.credentials);
-  }
-
-  // login() {
-  //   this.authService.authenticate(this.credentials, () => {
-  //       this.router.navigateByUrl('/');
-  //   });
-  //   return false;
-  // }
-
-  logout(){
-
+    this.authService.register(this.credentials);
   }
 
   authenticated() {

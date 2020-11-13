@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("fake")
-public class FakeUserDaoService implements UserDao {
+public class FakeUserDaoService implements UserDao{
 
   private final PasswordEncoder passwordEncoder;
 
@@ -22,8 +22,16 @@ public class FakeUserDaoService implements UserDao {
   }
 
   @Override
-  public Optional<AppUser> selectAppUserByUsername(String username) {
-    return getAppUsers().stream().filter(user -> user.getUsername().equals(username)).findFirst();
+  public Optional<AppUser> selectByName(String username) {
+    return getAppUsers()
+      .stream()
+      .filter(user -> user.getUsername().equals(username))
+      .findFirst();
+  }
+
+  @Override
+  public void save(AppUser appUser) {
+
   }
 
   private List<AppUser> getAppUsers(){
@@ -31,12 +39,7 @@ public class FakeUserDaoService implements UserDao {
     users.addAll(Arrays.asList(
       new AppUser(
         "tom",
-        passwordEncoder.encode("pass"),
-        AppUserRole.USER.getGrantedAuthorities(),
-        true,
-        true,
-        true,
-        true
+        passwordEncoder.encode("pass")
       )
     ));
 

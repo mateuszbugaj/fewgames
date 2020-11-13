@@ -23,10 +23,7 @@ export class AppService {
       score: score
     }
 
-    this.http.post("http://localhost:8080/api/v1/saveEntry", entry, httpOptions).subscribe(() => {
-      console.log("Logged game name: ");
-      console.log(entry);
-      });
+    this.http.post("api/v1/saveEntry", entry, httpOptions).subscribe(() => {});
   }
 
   getGameEntries(gameName: String){

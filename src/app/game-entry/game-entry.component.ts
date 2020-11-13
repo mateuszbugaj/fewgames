@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { gameEntry } from '../models/gameEntry';
 
 @Component({
@@ -6,15 +6,12 @@ import { gameEntry } from '../models/gameEntry';
   templateUrl: './game-entry.component.html',
   styleUrls: ['./game-entry.component.css']
 })
-export class GameEntryComponent implements OnInit {
+export class GameEntryComponent {
 
   @Input()
   entry: gameEntry;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   formatDate(date: Date): String{
     var d: Date = new Date(date);

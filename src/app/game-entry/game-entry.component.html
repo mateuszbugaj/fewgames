@@ -4,7 +4,7 @@
         <div *ngIf="entry.user; then userDefined else userUndefined"></div>
 
         <ng-template #userDefined>
-            <h5>{{entry.user.name}}</h5>
+            <h5>{{entry.user.username}}</h5>
         </ng-template>
 
         <ng-template #userUndefined>

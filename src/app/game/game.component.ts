@@ -31,6 +31,9 @@ export class GameComponent implements OnInit {
 
   getEntries(){
     this.app.getGameEntries(this.gameCode.name).subscribe(response => {
+      console.log("Game entries: ");
+      console.log(response);
+
       this.entries = response.sort((e1, e2) => {
         if(e1.score < e2.score){
           return 1;

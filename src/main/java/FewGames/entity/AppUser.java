@@ -1,42 +1,41 @@
 package FewGames.entity;
 
+import FewGames.auth.AppUserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
+@Entity
 public class AppUser implements UserDetails {
 
-  private final Set<? extends GrantedAuthority> grantedAuthorities;
-  private final String username;
-  private final String password;
-  private final boolean isAccountNonExpired;
-  private final boolean isAccountNonLocked;
-  private final boolean isCredentialsNonExpired;
-  private final boolean isEnabled;
+  @Id
+  @GeneratedValue
+  private Long id;
+
+  @Column(unique = true)
+  private String username;
+
+  @Column
+  private String password;
 
   public AppUser(String username,
-                 String password,
-                 Set<? extends GrantedAuthority> grantedAuthorities,
-                 boolean isAccountNonExpired,
-                 boolean isAccountNonLocked,
-                 boolean isCredentialsNonExpired,
-                 boolean isEnabled) {
+                 String password) {
 
-    this.grantedAuthorities = grantedAuthorities;
     this.username = username;
     this.password = password;
-    this.isAccountNonExpired = isAccountNonExpired;
-    this.isAccountNonLocked = isAccountNonLocked;
-    this.isCredentialsNonExpired = isCredentialsNonExpired;
-    this.isEnabled = isEnabled;
+  }
+
+  public AppUser() {
   }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return grantedAuthorities;
+    return AppUserRole.USER.getGrantedAuthorities();
   }
 
   @Override
@@ -51,21 +50,21 @@ public class AppUser implements UserDetails {
 
   @Override
   public boolean isAccountNonExpired() {
-    return isAccountNonExpired;
+    return true;
   }
 
   @Override
   public boolean isAccountNonLocked() {
-    return isAccountNonLocked;
+    return true;
   }
 
   @Override
   public boolean isCredentialsNonExpired() {
-    return isCredentialsNonExpired;
+    return true;
   }
 
   @Override
   public boolean isEnabled() {
-    return isEnabled;
+    return true;
   }
 }

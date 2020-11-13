@@ -1,19 +1,27 @@
 package FewGames.entity;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Entity
 public class GameEntry {
 
-  private final Long id;
+  @Id
+  @GeneratedValue
+  private Long id;
 
-  private final String gameName;
+  @Column
+  private String gameName;
 
-  private final Integer score;
+  @Column
+  private Integer score;
 
-  private final AppUser user;
+  @ManyToOne
+  private AppUser user;
 
   //https://www.baeldung.com/jpa-java-time
-  private final Timestamp date;
+  @Column
+  private Timestamp date;
 
   public GameEntry(Long id, String gameName, Integer score, AppUser user, Timestamp date) {
     this.id = id;
@@ -21,6 +29,9 @@ public class GameEntry {
     this.score = score;
     this.user = user;
     this.date = date;
+  }
+
+  public GameEntry() {
   }
 
   public Long getId() {
