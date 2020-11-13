@@ -12,9 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(userDto: IUser){
-      console.log("Registration");
-      console.log(userDto);
-
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -26,10 +23,7 @@ export class AuthService {
       });
   }
 
-  login(credentials) {
-    console.log("Login")
-    console.log(credentials);
-
+  login(credentials: IUser) {
     const headers = new HttpHeaders(credentials ? {
         authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)} : {});
 
