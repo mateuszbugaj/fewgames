@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
 
-@Repository("real")
-public class UserDaoService implements UserDao {
+@Repository("realUserRepo")
+public class UserDaoImpl implements UserDao {
 
   private final UserRepo userRepo;
 
   @Autowired
-  public UserDaoService(UserRepo userRepo) {
+  public UserDaoImpl(UserRepo userRepo) {
     this.userRepo = userRepo;
   }
 
@@ -27,7 +27,8 @@ public class UserDaoService implements UserDao {
   }
 
   @Override
-  public void save(AppUser appUser) {
+  public boolean save(AppUser appUser) {
     userRepo.save(appUser);
+    return true;
   }
 }

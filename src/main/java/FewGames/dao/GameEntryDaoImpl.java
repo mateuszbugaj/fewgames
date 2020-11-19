@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Repository("realGameRepo")
-public class GameEntryDaoService implements GameEntryDao {
+public class GameEntryDaoImpl implements GameEntryDao {
 
   private final GameEntryRepo gameEntryRepo;
 
   @Autowired
-  public GameEntryDaoService(GameEntryRepo gameEntryRepo) {
+  public GameEntryDaoImpl(GameEntryRepo gameEntryRepo) {
     this.gameEntryRepo = gameEntryRepo;
   }
 

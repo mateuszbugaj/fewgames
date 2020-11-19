@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface UserDao{
   Optional<AppUser> selectByName(String username);
-  void save(AppUser appUser);
+  boolean save(AppUser appUser);
 }
