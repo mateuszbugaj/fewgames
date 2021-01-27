@@ -1,0 +1,9 @@
+:root{
+    --yellow-main: #ecbe69;
+    --yellow-second: #ffebcd;
+    --grey: #4e5869;
+}
+
+.background {
+    background-color: #4e5869;
+}

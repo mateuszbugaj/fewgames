@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#ecbe69; 
+    background-color: var(--yellow); 
     height: 100px; 
     width: 100%;
 }
 
 #logo{
     font-size: 50px;
-    color: rgb(78, 88, 105);
+    color: #4e5869;
     text-decoration: none;
     font-weight: bold;
 }
